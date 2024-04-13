@@ -1,5 +1,5 @@
 # Tic Tac Toe 
-* [Link How to Setup](#how-to-setup)
+* [How to Setup](#how-to-setup)
 * [How to Start Program](#how-to-start-program)
 * [Algorithm and Design](#algorithm-and-design)
 
