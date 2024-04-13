@@ -35,8 +35,8 @@ class txtFragment : Fragment() {
     private var firstTurn = Turn.CROSS
     private var currentTurn = Turn.CROSS
 
-    private var crossScore = 0
-    private var noughtScore = 0
+//    private var crossScore = 0
+//    private var noughtScore = 0
 
     private var boardList = mutableListOf<Button>()
     private lateinit var binding: FragmentTxtBinding
@@ -111,7 +111,7 @@ class txtFragment : Fragment() {
         addToBoard(view)
 
         if (checkForVictory(NOUGHT)) {
-            noughtScore++
+//            noughtScore++
 
             val name = "Nought"
             val noughtResult = "Win"
@@ -123,7 +123,7 @@ class txtFragment : Fragment() {
             database = FirebaseDatabase.getInstance().getReference("ReplayResult")
             val replayResult = Replay(name,noughtResult,crossResult,date,time,layout)
 
-            database.child(time).setValue(replayResult).addOnSuccessListener {
+            database.child("$date $time").setValue(replayResult).addOnSuccessListener {
                 Toast.makeText(this.context,"Nought Win!!",Toast.LENGTH_SHORT).show()
                 result("Noughts Win!")
             }.addOnFailureListener {
@@ -133,7 +133,7 @@ class txtFragment : Fragment() {
 
         }
         if (checkForVictory(CROSS)) {
-            crossScore++
+//            crossScore++
 
             val name = "CROSS"
             val noughtResult = "Lose"
@@ -145,7 +145,7 @@ class txtFragment : Fragment() {
             database = FirebaseDatabase.getInstance().getReference("ReplayResult")
             val replayResult = Replay(name,noughtResult,crossResult,date,time,layout)
 
-            database.child(time).setValue(replayResult).addOnSuccessListener {
+            database.child("$date $time").setValue(replayResult).addOnSuccessListener {
                 Toast.makeText(this.context,"Crosses Win!!",Toast.LENGTH_SHORT).show()
                 result("Crosses Win!")
             }.addOnFailureListener {
@@ -168,7 +168,7 @@ class txtFragment : Fragment() {
             database = FirebaseDatabase.getInstance().getReference("ReplayResult")
             val replayResult = Replay(name,noughtResult,crossResult,date,time,layout)
 
-            database.child(time).setValue(replayResult).addOnSuccessListener {
+            database.child("$date $time").setValue(replayResult).addOnSuccessListener {
                 Toast.makeText(this.context,"Draw !!",Toast.LENGTH_SHORT).show()
                 result("Draw")
             }.addOnFailureListener {

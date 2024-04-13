@@ -74,11 +74,10 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/replayRecyclerview"
-            android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/replay_item"
-            />
+            android:layout_marginTop="5dp"
+            tools:listitem="@layout/replay_item" />
     </LinearLayout>
 
 
